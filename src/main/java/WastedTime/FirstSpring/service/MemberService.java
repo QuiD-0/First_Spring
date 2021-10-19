@@ -19,8 +19,11 @@ public class MemberService {
     }
 
     public Long join(Member member) {
+//        long start = System.currentTimeMillis();
         ValidateDuplicateMember(member);
         memberRepository.save(member);
+//        long finish = System.currentTimeMillis();
+//        System.out.println("time = " + (finish-start) + "ms");
         return member.getId();
     }
 
